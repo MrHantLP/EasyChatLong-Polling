@@ -50,8 +50,8 @@ function sendFile(fileName, res) {
             res.statusCode = 500;
             res.end("Server error");
         })
-        .pipe(res);
-    res.on('close', function () {
+        .pipe(res)
+        .on('close', function () {
         file.destroy();
     })
 }
